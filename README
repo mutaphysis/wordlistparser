@@ -1,0 +1,22 @@
+A simple nodejs script to parse a word list and generate a javascript or son file in containing a trie.
+
+
+Word file lines can look like this
+
+WORD definition with spaces [type ENDINGS] : WORDLINK [type]
+WORD definition with spaces [type] : WORDLINK [type]
+WORD definition with spaces [type]
+WORD [type]
+WORD
+
+description can contain
+<linkname=type>   > link to that definition
+{linkname=type}   > include that definitions text
+
+Js Output will look like this
+
+tree = {Z:{Z:{Z:{S:{$:1},$:1}},Y:{Z:{Z:{Y:{V:{A:{S:{$:1},$:1}}}}},T:{H:{U:{M:{S:{$:1},$:1}}}},M:{U:{R:{G:{Y:{$:1},I:{E:{S:{$:1}}}}}},O:{T:{I:{C:{S:{$:1},A:{L:{L:{Y:{$:1}}}},$:1}},E:{C:{H:{N:{I:{C:{S:{$:1},A:{L:{$:1}},$:1}}}}}}},S:{I:{S:{$:1},M:{E:{T:{E:{R:{S:{$:1},$:1}}}}}}, É
+
+JSON Output will look like this
+
+{"Z":{"Z":{"Z":{"S":{"$":1},"$":1}},"Y":{"Z":{"Z":{"Y":{"V":{"A":{"S":{"$":1},"$":1}}}}},"T":{"H":{"U":{"M":{"S":{"$":1},"$":1}}}},"M":{"U":{"R":{"G":{"Y":{"$":1},"I":{"E":{"S":{"$":1}}}}}},"O":{"T":{"I":{"C":{"S":{"$":1},"A":{"L":{"L":{"Y":{"$":1}}}},"$":1}},"E":{"C":{"H":{"N":{"I":{"C":{"S":{"$":1},"A":{"L":{"$":1}},"$":1}}}}}}}, É
