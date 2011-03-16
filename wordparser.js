@@ -34,7 +34,7 @@ var fs = require("fs");
 // <linkname=type>   > link to that definition
 // {linkname=type}   > include that definitions text
 
-var wordFile = "sowpods.txt";
+var wordFile = "example.txt";
 
 
 var isWord = function(wordTree, letters) {
@@ -94,14 +94,14 @@ var createWordTree = function(wordList) {
     }
     console.log("...done (", words, "words ) (", endTimer("parse"), "ms )");
     
-    // some tests
+    // speed test
     startTimer("find");
     for (var i = 0; i < 100000; i++) {
         isWord(wordTree, "NEUROANATOMICAL");
     }    
     console.log("...done checking (", endTimer("find"), "ms )");
-    startTimer("find");
     
+    // persisting
     startTimer("create json");
     var json = JSON.stringify(wordTree);    
     console.log("...done creating json (", json.length, "bytes ) (", endTimer("create json"), "ms )");  
