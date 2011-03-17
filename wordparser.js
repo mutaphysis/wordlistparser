@@ -131,11 +131,11 @@ var createWordTree = function(wordList) {
 
 
 var timers = {};
-var startTimer = function(name) {
+var startTimer = function(name) {
     timers[name] = (new Date()).getTime();
     return "";
 };
-var endTimer = function(name) {
+var endTimer = function(name) {
     var elapsed = (new Date()).getTime() - timers[name];
     delete timers[name];
     return elapsed;
